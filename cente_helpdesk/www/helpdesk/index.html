@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% if show_login_shell %}
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+			<title>{{ title }}</title>
+			<link rel="shortcut icon" href="{{ favicon }}" type="image/x-icon" />
+			{{ include_style("website.bundle.css") }}
+			{{ include_style("cente_helpdesk.bundle.css") }}
+			<script>
+				window.frappe = {};
+				frappe.ready_events = [];
+				frappe.ready = function(fn) {
+					frappe.ready_events.push(fn);
+				}
+				window.dev_server = 0;
+				window.socketio_port = 9000;
+				window.show_language_picker = false;
+			</script>
+		{% else %}
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ brand_name }}</title>
+		<meta name="application-name" content="{{ brand_name }}" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="{{ brand_short_name }}" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="theme-color" content="#1B3A8F" />
+
+		<link rel="icon" type="image/svg+xml" href="{{ favicon }}" />
+		<link rel="mask-icon" href="{{ favicon }}" color="#1B3A8F" />
+		<link rel="apple-touch-icon" href="{{ favicon }}" />
+		<link rel="manifest" href="{{ helpdesk_assets.manifest }}" />
+
+		<link rel="stylesheet" href="{{ helpdesk_assets.main_style }}" />
+		{{ include_style("cente_helpdesk.bundle.css") }}
+
+		<script type="module" crossorigin src="{{ helpdesk_assets.main_script }}"></script>
+		{% if helpdesk_assets.register_sw %}
+		<script id="vite-plugin-pwa:register-sw" src="{{ helpdesk_assets.register_sw }}"></script>
+		{% endif %}
+		{% endif %}
+	</head>
+	<body class="cente-helpdesk-shell{% if body_class %} {{ body_class }}{% endif %}"{% if not show_login_shell %}{% else %} data-path="helpdesk-login"{% endif %}>
+		{% if show_login_shell %}
+		{% include "cente_helpdesk/templates/includes/cente_login_shell.html" %}
+		{{ include_script("frappe-web.bundle.js") }}
+		{{ include_script("cente_helpdesk.bundle.js") }}
+		{% else %}
+		<div id="app"></div>
+		<div id="modals"></div>
+		<div id="popovers"></div>
+
+		<script>
+			window.site_name = {{ (site_name or "") | tojson }};
+		</script>
+
+		<script>
+			{% for key in boot %}
+			window[{{ key | tojson }}] = {{ boot[key] | tojson }};
+			{% endfor %}
+		</script>
+
+		{{ include_script("cente_helpdesk.bundle.js") }}
+		{% endif %}
+	</body>
+</html>

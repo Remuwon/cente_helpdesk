@@ -1,0 +1,105 @@
+<main class="cente-login-shell" data-helpdesk-login-shell>
+	<div class="cente-login-slab" aria-labelledby="cente-login-heading">
+		<section class="cente-login-left" aria-label="Centenary Bank support desk panel">
+			<div class="cente-login-pattern" aria-hidden="true">
+				<div class="cente-shape cente-shape-one"></div>
+				<div class="cente-shape cente-shape-two"></div>
+				<div class="cente-shape cente-shape-three"></div>
+			</div>
+
+			<div class="cente-login-left-inner">
+				<header class="cente-brand-header">
+					<div class="cente-brand-mark">
+						<img src="{{ brand_logo }}" alt="{{ brand_name }}" class="cente-brand-logo">
+					</div>
+				</header>
+
+				<div class="cente-brand-copy">
+					<div class="cente-accent-bar"></div>
+					<h1>Customer Support<br>Portal</h1>
+					<p>
+						Raise, track and resolve banking service requests. Our team is here to assist you every step of the way.
+					</p>
+
+					<div class="cente-brand-stats" aria-label="Support highlights">
+						<div class="cente-stat">
+							<strong>98%</strong>
+							<span>Resolution Rate</span>
+						</div>
+						<div class="cente-stat">
+							<strong>&lt;2h</strong>
+							<span>Avg Response</span>
+						</div>
+						<div class="cente-stat">
+							<strong>24/7</strong>
+							<span>Availability</span>
+						</div>
+					</div>
+				</div>
+
+				<footer class="cente-brand-footer">
+					&copy; {{ current_year }} Centenary Bank Uganda. All rights reserved.
+				</footer>
+			</div>
+		</section>
+
+		<section class="cente-login-right" aria-label="Sign in form panel">
+			<div class="cente-login-right-inner">
+				<div class="cente-panel-header">
+					<h2 id="cente-login-heading">Agent Sign In</h2>
+					<p>Log in to manage your support tickets</p>
+				</div>
+
+				<div class="cente-login-message" data-login-message hidden></div>
+
+				{% if not disable_user_pass_login %}
+				<form class="cente-login-form" data-helpdesk-login-form novalidate>
+					<input type="hidden" name="redirect-to" value="{{ redirect_to }}">
+
+					<div class="cente-field">
+						<label for="cente-login-email">Email Address</label>
+						<input id="cente-login-email" name="usr" type="email" autocomplete="username" placeholder="agent@centenarybank.co.ug" required>
+					</div>
+
+					<div class="cente-field">
+						<label for="cente-login-password">Password</label>
+						<input id="cente-login-password" name="pwd" type="password" autocomplete="current-password" placeholder="••••••••••" required>
+						<a href="/login#forgot" class="cente-forgot-link" data-standard-forgot>Forgot password?</a>
+					</div>
+
+					<button type="submit" class="cente-action cente-action-primary" data-login-submit>
+						<span>Sign In</span>
+					</button>
+				</form>
+				{% else %}
+				<div class="cente-login-note">Password login is disabled for this site. Use single sign-on to continue.</div>
+				{% endif %}
+
+				<div class="cente-divider" aria-hidden="true">
+					<hr>
+					<span>OR</span>
+					<hr>
+				</div>
+
+				<div class="cente-sso-stack">
+					{% if provider_logins %}
+						{% for provider in provider_logins %}
+						<a class="cente-action cente-action-secondary" href="{{ provider.auth_url }}">
+							<span>{{ _("Continue with {0}").format(provider.provider_name) }}</span>
+						</a>
+						{% endfor %}
+					{% else %}
+						<a class="cente-action cente-action-secondary" href="/login" data-standard-login>
+							<span>Continue with SSO</span>
+						</a>
+					{% endif %}
+				</div>
+
+				<footer class="cente-panel-footer">
+					<p>Powered by Centenary Bank IT Division</p>
+					<span>v2.0 - Internal Use Only</span>
+				</footer>
+			</div>
+		</section>
+	</div>
+</main>

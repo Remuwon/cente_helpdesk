@@ -1,0 +1,752 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+$primary-blue: #1b3a8f;
+$primary-blue-dark: #122870;
+$primary-blue-light: #e8edf8;
+$primary-blue-mid: #3054b8;
+$secondary-red: #c0392b;
+$accent-yellow: #f5c518;
+$body-text: #4a4a4a;
+$gray-mid: #9e9e9e;
+$border: #e0e0e0;
+$white: #ffffff;
+$success-green: #1b7a3e;
+$warning-amber: #856404;
+
+:root {
+	--primary: #{$primary-blue};
+	--primary-color: #{$primary-blue};
+	--btn-default-bg: #{$primary-blue};
+	--btn-default-hover-bg: #{$primary-blue-dark};
+	--link-color: #{$primary-blue-mid};
+	--border-radius: 4px;
+	--border-radius-sm: 2px;
+	--border-radius-md: 4px;
+	--font-stack: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-size-base: 14px;
+
+	// ── FRAPPE PURPLE / VIOLET / PINK CATCH-ALL ──────────────────────────────
+	--purple-50: #{$primary-blue-light};
+	--purple-100: #{$primary-blue-light};
+	--purple-200: #c4d0ed;
+	--purple-300: #8fa1d6;
+	--purple-400: #{$primary-blue-mid};
+	--purple-500: #{$primary-blue};
+	--purple-600: #{$primary-blue};
+	--purple-700: #{$primary-blue-dark};
+	--purple-800: #{$primary-blue-dark};
+	--purple-900: #0e1f56;
+	--violet-50: #{$primary-blue-light};
+	--violet-100: #{$primary-blue-light};
+	--violet-200: #c4d0ed;
+	--violet-300: #8fa1d6;
+	--violet-400: #{$primary-blue-mid};
+	--violet-500: #{$primary-blue};
+	--violet-600: #{$primary-blue};
+	--violet-700: #{$primary-blue-dark};
+	--violet-800: #{$primary-blue-dark};
+	--violet-900: #0e1f56;
+	--pink-50: #{$primary-blue-light};
+	--pink-100: #{$primary-blue-light};
+	--pink-200: #c4d0ed;
+	--pink-300: #8fa1d6;
+	--pink-400: #{$primary-blue-mid};
+	--pink-500: #{$primary-blue};
+	--pink-600: #{$primary-blue};
+	--pink-700: #{$primary-blue-dark};
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+	font-family: var(--font-stack) !important;
+}
+
+body {
+	color: $body-text;
+	background: linear-gradient(180deg, #f6f8fc 0%, #ffffff 100%);
+}
+
+a {
+	color: $primary-blue-mid;
+}
+
+button,
+.btn,
+input,
+select,
+textarea,
+[role="button"] {
+	border-radius: 4px !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select,
+.form-control {
+	border-color: $border;
+
+	&:focus {
+		border-color: $primary-blue !important;
+		box-shadow: 0 0 0 2px rgba(27, 58, 143, 0.15) !important;
+		outline: none !important;
+	}
+}
+
+input[type="checkbox"] {
+	accent-color: $primary-blue;
+}
+
+#app {
+	color: $body-text;
+
+	a {
+		color: $primary-blue-mid;
+	}
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 {
+	background: $primary-blue-dark !important;
+	border-color: rgba(255, 255, 255, 0.12) !important;
+	color: $white !important;
+	box-shadow: 14px 0 32px rgba(18, 40, 112, 0.12);
+}
+
+#app [data-cente-hidden="onboarding-panel"],
+#app [data-cente-hidden="onboarding-cta"] {
+	display: none !important;
+}
+
+// Hide getting-started / onboarding step counter banner in sidebar
+#app .select-none.flex-col.border-r.bg-gray-50 [class*="getting-started"],
+#app .select-none.flex-col.border-r.bg-gray-50 [data-cente-hidden="onboarding-panel"],
+#app [data-cente-onboarding="true"] {
+	display: none !important;
+}
+
+#app [data-cente-user-menu="true"] {
+	background: transparent !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	height: auto !important;
+	justify-content: flex-start !important;
+	gap: 12px !important;
+	padding: 16px 14px 14px !important;
+	width: 100% !important;
+}
+
+#app [data-cente-user-menu="true"]::before {
+	background: $white;
+	border: 3px solid rgba(255, 255, 255, 0.2);
+	border-radius: 999px;
+	content: "";
+	background-image: url("/assets/cente_helpdesk/images/centenary_favicon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 26px 26px;
+	flex: 0 0 42px;
+	height: 42px;
+	width: 42px;
+}
+
+#app [data-cente-user-menu="true"] img {
+	display: none !important;
+}
+
+#app [data-cente-user-menu="true"] > .flex.flex-1.flex-col {
+	display: block !important;
+	flex: 1 1 auto !important;
+	margin-left: 0 !important;
+	min-width: 0 !important;
+	overflow: visible !important;
+	position: relative;
+	text-overflow: clip !important;
+}
+
+#app [data-cente-user-menu="true"] > .flex.flex-1.flex-col > * {
+	display: none !important;
+}
+
+#app [data-cente-user-menu="true"] > .flex.flex-1.flex-col::before {
+	color: $white;
+	content: "Centenary Bank";
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.25;
+	margin-bottom: 2px;
+	overflow: visible !important;
+	text-overflow: clip !important;
+	white-space: normal;
+}
+
+#app [data-cente-user-menu="true"] > .flex.flex-1.flex-col::after {
+	color: rgba(255, 255, 255, 0.58);
+	content: "Support Desk";
+	display: block;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 1.15;
+}
+
+#app [data-cente-user-menu="true"] > .duration-300.ease-in-out {
+	display: none !important;
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .text-gray-900,
+#app .select-none.flex-col.border-r.bg-gray-50 .text-gray-800,
+#app .select-none.flex-col.border-r.bg-gray-50 .text-gray-700,
+#app .select-none.flex-col.border-r.bg-gray-50 .text-gray-600,
+#app .select-none.flex-col.border-r.bg-gray-50 .text-ink-gray-5,
+#app .select-none.flex-col.border-r.bg-gray-50 .text-ink-gray-9,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-gray-900,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-gray-800,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-gray-700,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-gray-600,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-ink-gray-5,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .text-ink-gray-9 {
+	color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .border-b,
+#app .select-none.flex-col.border-r.bg-gray-50 .border-r,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .border-b,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .border-r {
+	border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center {
+	border-radius: 6px !important;
+	color: rgba(255, 255, 255, 0.7) !important;
+	height: 36px !important;
+	margin: 1px 8px !important;
+	padding-left: 10px !important;
+	padding-right: 8px !important;
+	transition: background 0.15s ease, color 0.15s ease;
+	width: calc(100% - 16px) !important;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.08) !important;
+		color: $white !important;
+	}
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center .-all.ml-2.flex.shrink-0.grow.items-center.justify-between.text-sm,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center .-all.ml-2.flex.shrink-0.grow.items-center.justify-between.text-sm {
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	margin-left: 10px !important;
+}
+
+#app [data-cente-nav="search"] {
+	background: rgba(255, 255, 255, 0.08) !important;
+	border: 1px solid rgba(255, 255, 255, 0.12) !important;
+	border-radius: 6px !important;
+	box-sizing: border-box !important;
+	height: 34px !important;
+	margin: 6px 8px 8px !important;
+	max-width: calc(100% - 16px) !important;
+	padding-left: 10px !important;
+	padding-right: 8px !important;
+	width: calc(100% - 16px) !important;
+}
+
+#app [data-cente-nav="search"] .text-sm,
+#app [data-cente-nav="search"] .font-medium,
+#app [data-cente-nav="search"] [class*="text-gray"],
+#app [data-cente-nav="search"] [class*="text-ink"] {
+	color: rgba(255, 255, 255, 0.48) !important;
+	font-size: 12px !important;
+	font-weight: 400 !important;
+}
+
+#app [data-cente-nav="search"] svg,
+#app [data-cente-nav="search"] [class*="h-4"] {
+	height: 14px !important;
+	width: 14px !important;
+}
+
+#app [data-cente-nav="search"] [class*="right"],
+#app [data-cente-nav="search"] [class*="gap-0.5"] {
+	color: rgba(255, 255, 255, 0.48) !important;
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center.shadow-sm,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .-all.flex.h-7.cursor-pointer.items-center.shadow-sm {
+	position: relative;
+	background: rgba(255, 255, 255, 0.14) !important;
+	box-shadow: none !important;
+	color: $white !important;
+	font-weight: 600 !important;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 6px;
+		bottom: 6px;
+		right: -8px;
+		width: 3px;
+		background: $secondary-red;
+		border-radius: 999px 0 0 999px;
+	}
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .mx-2.my-2.h-1.border-b,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .mx-2.my-2.h-1 {
+	display: none !important;
+}
+
+#app .select-none.flex-col.border-r.bg-gray-50 .grow + .flex.flex-col.gap-2,
+.fixed .relative.z-10.flex.h-full.w-\[230px\].flex-col.border-r.bg-gray-50 .grow + .flex.flex-col.gap-2 {
+	padding: 0 12px 12px !important;
+}
+
+#app .flex.border-b.pr-5,
+#app .flex.border-b.h-12.items-center {
+	background: $white !important;
+	border-color: $border !important;
+}
+
+#app header.flex.h-10\.5.items-center.justify-between.mx-4.md\:mr-0 {
+	height: 52px !important;
+	margin-left: 24px !important;
+	margin-right: 20px !important;
+}
+
+#app header.flex.h-10\.5.items-center.justify-between.mx-4.md\:mr-0 .max-w-\[50\%\] {
+	max-width: none !important;
+}
+
+#app [data-cente-action="primary"] {
+	background: $primary-blue !important;
+	border: 1px solid $primary-blue !important;
+	border-radius: 4px !important;
+	box-shadow: none !important;
+	color: $white !important;
+	font-weight: 600 !important;
+	min-height: 40px !important;
+	padding: 0 16px !important;
+}
+
+#app [data-cente-action="primary"]:hover {
+	background: $primary-blue-dark !important;
+	border-color: $primary-blue-dark !important;
+}
+
+#app [data-cente-action="toolbar"] {
+	background: $white !important;
+	border: 1px solid $border !important;
+	border-radius: 4px !important;
+	box-shadow: none !important;
+	color: $body-text !important;
+	min-height: 40px !important;
+}
+
+#app [data-cente-action="outline"] {
+	background: $white !important;
+	border: 1px solid $primary-blue !important;
+	border-radius: 4px !important;
+	box-shadow: none !important;
+	color: $primary-blue !important;
+	font-weight: 600 !important;
+	min-height: 42px !important;
+	padding: 0 18px !important;
+}
+
+#app [data-cente-action="outline"]:hover {
+	background: $primary-blue-light !important;
+}
+
+#app #app-header,
+#app #app-header header {
+	background: transparent !important;
+	border-bottom: 0 !important;
+}
+
+#app .breadcrumbs a,
+#app [class*="breadcrumb"] a {
+	color: $primary-blue !important;
+}
+
+#app #list-rows .row,
+#app #list-rows > * {
+	border-radius: 4px;
+	transition: background-color 0.15s ease;
+}
+
+#app [id="list-rows"] [data-cente-status],
+#app [data-cente-status] {
+	border-radius: 4px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	justify-content: center !important;
+	max-width: max-content !important;
+	padding: 4px 10px !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	line-height: 1 !important;
+	min-width: 0 !important;
+	width: fit-content !important;
+}
+
+#app [data-cente-status="open"] {
+	background: #faeae8 !important;
+	color: $secondary-red !important;
+}
+
+#app [data-cente-status="resolved"] {
+	background: #e8f5ec !important;
+	color: $success-green !important;
+}
+
+#app [data-cente-status="replied"] {
+	background: $primary-blue-light !important;
+	color: $primary-blue !important;
+}
+
+#app [data-cente-status="closed"] {
+	background: #eeeeee !important;
+	color: $body-text !important;
+}
+
+#app [data-cente-status="paused"] {
+	background: #fff8e1 !important;
+	color: $warning-amber !important;
+}
+
+#app [data-cente-status="fulfilled"] {
+	background: #e8f5ec !important;
+	color: $success-green !important;
+}
+
+#app .text-blue-700,
+#app .text-violet-700,
+#app .text-red-500,
+#app .text-gray-700,
+#app .text-green-700 {
+	font-weight: 600;
+}
+
+#app [class*="border-l"],
+#app .border-l,
+#app .border-t,
+#app .border-b {
+	border-color: $border !important;
+}
+
+#app .tab-buttons,
+#app [role="tablist"] {
+	border-bottom: 1px solid $border !important;
+}
+
+#app [role="tab"] {
+	background: transparent !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-top: 0 !important;
+	border-bottom: 2px solid transparent !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	color: $gray-mid !important;
+	font-weight: 500 !important;
+	padding-bottom: 12px !important;
+	padding-top: 12px !important;
+}
+
+#app [role="tab"][aria-selected="true"] {
+	border-bottom-color: $primary-blue !important;
+	color: $primary-blue !important;
+}
+
+// Kill any additional pseudo-element underline added by Frappe UI Tabs component
+#app [role="tablist"] > [class*="absolute"],
+#app [role="tablist"] > span[class*="border"],
+#app [role="tablist"] .absolute.bottom-0,
+#app [role="tablist"] > span.absolute,
+#app [role="tablist"] + span.absolute,
+#app [role="tablist"] ~ span[class*="bottom"],
+#app .relative > [role="tablist"] ~ span,
+#app .relative > [role="tablist"] ~ div.absolute {
+	display: none !important;
+}
+
+// Also suppress any border-bottom on the active tab's parent container
+// that creates the "grey line" behind the active indicator
+#app [role="tablist"] {
+	position: relative !important;
+}
+
+#app .activities .activity .bg-white,
+#app .activities .activity [class*="shadow"],
+#app .activities .activity [class*="rounded"] {
+	border-color: $border !important;
+	border-radius: 4px !important;
+}
+
+#app .activities .activity .mb-4.flex.flex-1 > * {
+	border: 1px solid $border !important;
+	border-radius: 4px !important;
+	box-shadow: none !important;
+}
+
+#app .activities .activity .mb-4.flex.flex-1 > *[class*="border-l"] {
+	border-left: 3px solid $primary-blue !important;
+}
+
+#app .comm-area > .flex.justify-between.gap-3.border-t {
+	background: $white !important;
+	padding-bottom: 12px !important;
+	padding-top: 12px !important;
+}
+
+#app .tab-buttons.mb-1.px-5.mt-3\.5 {
+	margin-top: 20px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+
+#app .tab-buttons.mb-1.px-5.mt-3\.5 button {
+	background: $white !important;
+	border: 1px solid $border !important;
+	border-radius: 4px !important;
+	color: $body-text !important;
+	font-weight: 600 !important;
+}
+
+#app .tab-buttons.mb-1.px-5.mt-3\.5 button[aria-pressed="true"],
+#app .tab-buttons.mb-1.px-5.mt-3\.5 button[aria-selected="true"] {
+	background: #fafafa !important;
+	border-color: $border !important;
+	box-shadow: none !important;
+	color: $body-text !important;
+}
+
+#app [data-cente-ticket-status-button="true"] {
+	background: #faeae8 !important;
+	border: 1px solid transparent !important;
+	box-shadow: none !important;
+	color: $secondary-red !important;
+	min-height: 36px !important;
+	padding: 0 14px !important;
+}
+
+#app [data-cente-ticket-status-button="true"] svg {
+	color: $secondary-red !important;
+}
+
+#app [data-cente-ticket-icon-button="true"] {
+	background: transparent !important;
+	border: 1px solid transparent !important;
+	box-shadow: none !important;
+	color: $gray-mid !important;
+	min-height: 32px !important;
+	padding: 0 !important;
+	width: 32px !important;
+}
+
+#app [data-cente-ticket-icon-button="true"]:hover {
+	background: #f8f8f8 !important;
+	border-color: $border !important;
+}
+
+#app .px-5.pb-4.flex.flex-col,
+#app .px-5.text-ink-gray-5.pb-2,
+#app .px-5.border-t.pb-2\.5 {
+	padding-left: 24px !important;
+	padding-right: 24px !important;
+}
+
+#app .form-control-core button,
+#app .px-5.pb-4.flex.flex-col button,
+#app .px-5.pb-4.flex.flex-col input {
+	border-color: $border !important;
+	border-radius: 4px !important;
+	box-shadow: none !important;
+	min-height: 40px !important;
+}
+
+#app .form-control-core button:focus,
+#app .px-5.pb-4.flex.flex-col button:focus,
+#app .px-5.pb-4.flex.flex-col input:focus {
+	border-color: $primary-blue !important;
+	box-shadow: 0 0 0 2px rgba(27, 58, 143, 0.12) !important;
+}
+
+#app .px-5.text-ink-gray-5.pb-2 .hover\:underline,
+#app .mention,
+#app a.mention {
+	color: $primary-blue !important;
+	font-weight: 600 !important;
+}
+
+#app .activities .bg-yellow-100 {
+	background: #fff8e1 !important;
+}
+
+#app #list-rows .row:hover,
+#app #list-rows > *:hover {
+	background: $primary-blue-light !important;
+	cursor: pointer;
+}
+
+#app [class*="card"],
+#app [class*="panel"],
+#app [class*="ticket-detail"],
+#app [class*="rounded"],
+#app .shadow-sm,
+#app .shadow-xs {
+	border-radius: 4px !important;
+}
+
+#app [class*="ring-purple"],
+#app [class*="ring-violet"] {
+	--tw-ring-color: rgba(27, 58, 143, 0.35) !important;
+}
+
+// ── FRAPPE PURPLE CATCH-ALL (classes + SLA indicators) ───────────────────────
+#app .text-purple-600,
+#app .text-purple-700,
+#app .text-purple-500,
+#app .text-purple-400,
+#app .text-violet-600,
+#app .text-violet-700,
+#app .text-violet-500,
+#app .text-pink-600,
+#app .text-pink-500,
+#app [class*="text-primary"] {
+	color: $primary-blue !important;
+}
+
+#app .bg-purple-600,
+#app .bg-purple-700,
+#app .bg-purple-500,
+#app .bg-violet-600,
+#app .bg-violet-700,
+#app .bg-violet-500,
+#app .bg-pink-600,
+#app .bg-pink-500,
+#app [class*="bg-primary"] {
+	background-color: $primary-blue !important;
+	color: $white !important;
+}
+
+#app .bg-purple-50,
+#app .bg-purple-100,
+#app .bg-violet-50,
+#app .bg-violet-100,
+#app .bg-pink-50,
+#app .bg-pink-100 {
+	background-color: $primary-blue-light !important;
+	color: $primary-blue !important;
+}
+
+#app .border-purple-600,
+#app .border-purple-500,
+#app .border-violet-600,
+#app .border-violet-500,
+#app .border-pink-600,
+#app [class*="border-primary"] {
+	border-color: $primary-blue !important;
+}
+
+#app .hover\:bg-purple-700:hover,
+#app .hover\:bg-violet-700:hover,
+#app .hover\:bg-pink-700:hover {
+	background-color: $primary-blue-dark !important;
+}
+
+// SLA indicator pills — commonly use .indicator-pill with color classes
+#app .indicator-pill.purple,
+#app .indicator-pill.violet,
+#app .indicator-pill.pink {
+	background: $primary-blue-light !important;
+	color: $primary-blue !important;
+}
+
+#app .indicator-pill.purple::before,
+#app .indicator-pill.violet::before,
+#app .indicator-pill.pink::before {
+	background: $primary-blue !important;
+}
+
+// SLA text that Helpdesk renders in purple/violet inline styles
+#app [style*="color: var(--purple"],
+#app [style*="color: var(--violet"],
+#app [style*="color: var(--pink"] {
+	color: $primary-blue !important;
+}
+
+// Frappe inline indicator text (e.g. "Due in 2d 23h")
+#app .text-ink-blue-3,
+#app .text-ink-violet-3,
+#app [class*="text-ink-purple"],
+#app [class*="text-ink-violet"],
+#app [class*="text-ink-pink"] {
+	color: $primary-blue !important;
+}
+
+body[data-path="login"] .page-card,
+body[data-path="login"] .page-card-head,
+body[data-path="login"] .page-card-actions,
+body[data-path="login"] .form-control {
+	border-radius: 4px !important;
+}
+
+body[data-path="login"] .btn-primary,
+body[data-path="login"] .btn-login,
+body[data-path="login"] .btn-default:hover {
+	background: $primary-blue !important;
+	border-color: $primary-blue !important;
+	color: $white !important;
+}
+
+body[data-path="login"] .btn-primary:hover,
+body[data-path="login"] .btn-login:hover {
+	background: $primary-blue-dark !important;
+	border-color: $primary-blue-dark !important;
+}
+
+// ── DASHBOARD ────────────────────────────────────────────────────────────────
+#app .p-5.w-full.overflow-y-scroll .border.rounded-md {
+	background: $white !important;
+	border: 1px solid $border !important;
+	border-radius: 8px !important;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+#app .p-5.w-full.overflow-y-scroll .border.rounded-md.min-h-80 {
+	padding: 20px !important;
+}
+
+// ── SORT POPOVER ─────────────────────────────────────────────────────────────
+#app [class*="popover"],
+#app [data-headlessui-state] [class*="shadow"],
+#app .absolute.z-10[class*="rounded"][class*="shadow"],
+#app [id^="headlessui-popover-panel"] {
+	background: $white !important;
+	border: 1px solid $border !important;
+	border-radius: 8px !important;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.helpdesk-login-page {
+	background:
+		radial-gradient(circle at top right, rgba(245, 197, 24, 0.16), transparent 28%),
+		linear-gradient(135deg, #10296f 0%, #1b3a8f 46%, #28469d 100%);
+}
+
+.helpdesk-login-page .web-footer,
+.helpdesk-login-page .navbar,
+.helpdesk-login-page .web-header {
+	display: none !important;
+}
