@@ -3,6 +3,7 @@ from __future__ import annotations
 import frappe
 
 from cente_helpdesk.branding import (
+	BRAND_DESK_LOGO_PATH,
 	BRAND_FAVICON_PATH,
 	BRAND_LOGO_PATH,
 	BRAND_NAME,
@@ -26,14 +27,14 @@ def apply_singleton_branding() -> None:
 			"favicon": BRAND_FAVICON_PATH,
 		},
 	)
-	set_singleton_values("Navbar Settings", {"app_logo": BRAND_LOGO_PATH})
+	set_singleton_values("Navbar Settings", {"app_logo": BRAND_DESK_LOGO_PATH})
 
 	if frappe.db.exists("DocType", "HD Settings"):
 		set_singleton_values(
 			"HD Settings",
 			{
 				"brand_name": BRAND_NAME,
-				"brand_logo": BRAND_LOGO_PATH,
+				"brand_logo": BRAND_DESK_LOGO_PATH,
 				"favicon": BRAND_FAVICON_PATH,
 			},
 		)

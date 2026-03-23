@@ -6,7 +6,7 @@ app_publisher = "TenxAfrica"
 app_description = "Centenary Bank Helpdesk"
 app_email = "jremuwon@gmail.com"
 app_license = "mit"
-app_logo_url = "/assets/cente_helpdesk/images/centenary_logo.svg"
+app_logo_url = "/assets/cente_helpdesk/images/centenary_logo_mark.svg"
 
 required_apps = ["helpdesk"]
 

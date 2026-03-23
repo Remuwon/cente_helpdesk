@@ -144,21 +144,15 @@ input[type="checkbox"] {
 }
 
 #app [data-cente-user-menu="true"]::before {
-	background: $white;
-	border: 3px solid rgba(255, 255, 255, 0.2);
-	border-radius: 999px;
-	content: "";
-	background-image: url("/assets/cente_helpdesk/images/centenary_favicon.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 26px 26px;
-	flex: 0 0 42px;
-	height: 42px;
-	width: 42px;
+	content: none !important;
 }
 
 #app [data-cente-user-menu="true"] img {
-	display: none !important;
+	display: block !important;
+	flex: 0 0 42px !important;
+	height: 42px !important;
+	object-fit: contain !important;
+	width: 42px !important;
 }
 
 #app [data-cente-user-menu="true"] > .flex.flex-1.flex-col {

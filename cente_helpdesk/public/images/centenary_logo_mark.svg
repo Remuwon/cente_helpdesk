@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-labelledby="logoMarkTitle logoMarkDesc">
+	<title id="logoMarkTitle">Centenary Bank logo mark</title>
+	<desc id="logoMarkDesc">Centenary Bank icon-only logo mark for desk branding.</desc>
+	<circle cx="24" cy="24" r="20" fill="#1B3A8F" stroke="#FFFFFF" stroke-width="4" />
+	<polygon points="24,10 32,18 24,26 16,18" fill="#F5C518" />
+	<polygon points="24,20 32,28 24,36 16,28" fill="#C0392B" opacity="0.9" />
+</svg>
