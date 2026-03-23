@@ -63,6 +63,33 @@
 		annotateStatusPills();
 		annotateHeaderControls();
 		annotateAuxiliaryPanels();
+		hideDropdownLinks();
+		hideSlaLinks();
+	}
+
+	function hideDropdownLinks() {
+		document.querySelectorAll(".dropdown-content button, .dropdown-content a").forEach((item) => {
+			const label = normalizeText(item.textContent);
+			if (label === "support" || label === "docs") {
+				item.setAttribute("data-cente-hidden", "user-menu-link");
+				item.style.display = "none";
+			}
+		});
+	}
+
+	function hideSlaLinks() {
+		document.querySelectorAll("a").forEach((item) => {
+			const label = normalizeText(item.textContent);
+			const href = item.getAttribute("href") || "";
+
+			if (
+				label === "learn more about sla" ||
+				href.includes("docs.frappe.io/helpdesk/service-level-agreement")
+			) {
+				item.setAttribute("data-cente-hidden", "sla-learn-more");
+				item.style.display = "none";
+			}
+		});
 	}
 
 	function annotateSidebar() {

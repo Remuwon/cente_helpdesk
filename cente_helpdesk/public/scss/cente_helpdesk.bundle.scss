@@ -684,6 +684,13 @@ input[type="checkbox"] {
 	color: $primary-blue !important;
 }
 
+// Hide SLA policies documentation link in settings
+body a[href="https://docs.frappe.io/helpdesk/service-level-agreement"],
+body a[href*="docs.frappe.io/helpdesk/service-level-agreement"],
+body [data-cente-hidden="sla-learn-more"] {
+	display: none !important;
+}
+
 // Frappe inline indicator text (e.g. "Due in 2d 23h")
 #app .text-ink-blue-3,
 #app .text-ink-violet-3,
