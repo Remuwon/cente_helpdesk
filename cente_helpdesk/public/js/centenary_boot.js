@@ -124,6 +124,20 @@
 
 		document.querySelectorAll("#app .mb-2 button").forEach((item) => {
 			item.setAttribute("data-cente-user-menu", "true");
+			const brandCopy = item.querySelector(".flex.flex-1.flex-col");
+			if (brandCopy) {
+				brandCopy.setAttribute("data-cente-brand-copy", "true");
+				const primaryLine = brandCopy.children[0];
+				const secondaryLine = brandCopy.children[1];
+				if (primaryLine) {
+					primaryLine.textContent = "Centenary Bank";
+					primaryLine.setAttribute("data-cente-brand-line", "primary");
+				}
+				if (secondaryLine) {
+					secondaryLine.textContent = "Support Desk";
+					secondaryLine.setAttribute("data-cente-brand-line", "secondary");
+				}
+			}
 		});
 	}
 
