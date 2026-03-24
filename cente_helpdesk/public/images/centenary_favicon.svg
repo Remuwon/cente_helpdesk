@@ -1,6 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-labelledby="faviconTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="40" height="40" role="img" aria-labelledby="faviconTitle">
 	<title id="faviconTitle">Centenary Bank favicon</title>
-	<rect width="40" height="40" rx="8" fill="#1B3A8F"/>
-	<polygon points="20,7 28,15 20,23 12,15" fill="#F5C518"/>
-	<polygon points="20,17 28,25 20,33 12,25" fill="#C0392B" opacity="0.9"/>
+	<defs>
+		<clipPath id="circle-clip-favicon">
+			<circle cx="500" cy="500" r="500" />
+		</clipPath>
+	</defs>
+
+	<circle cx="500" cy="500" r="500" fill="#09338F" />
+
+	<g clip-path="url(#circle-clip-favicon)">
+		<path d="M 420 490 L 420 425 A 15 15 0 0 1 435 410 L 565 410 A 15 15 0 0 1 580 425 L 580 490 Z" fill="#F9EB53" />
+		<path d="M 490 430 L 510 430 L 510 443 L 525 443 L 525 457 L 510 457 L 510 470 L 490 470 L 490 457 L 475 457 L 475 443 L 490 443 Z" fill="#EA2228" />
+		<rect x="419" y="490" width="162" height="15" fill="#09338F" />
+		<polygon points="420,505 455,505 280,1050 200,1050" fill="#F9EB53" />
+		<polygon points="455,505 467,505 305,1050 280,1050" fill="#EA2228" />
+		<polygon points="467,505 520,505 520,1050 305,1050" fill="#EA2228" />
+		<polygon points="520,505 580,505 800,1050 520,1050" fill="#F9EB53" />
+	</g>
+
+	<circle cx="500" cy="500" r="470" fill="none" stroke="#FFFFFF" stroke-width="60" />
 </svg>

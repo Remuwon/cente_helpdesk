@@ -1,11 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48" role="img" aria-labelledby="logoTitle logoDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56" role="img" aria-labelledby="logoTitle logoDesc">
 	<title id="logoTitle">Centenary Bank Support Desk</title>
-	<desc id="logoDesc">Centenary Bank placeholder logo for the support desk application.</desc>
-	<g transform="translate(6 4)">
-		<circle cx="20" cy="20" r="18" fill="#1B3A8F" stroke="#FFFFFF" stroke-width="3"/>
-		<polygon points="20,8 27,16 20,24 13,16" fill="#F5C518"/>
-		<polygon points="20,17 27,25 20,33 13,25" fill="#C0392B" opacity="0.9"/>
+	<desc id="logoDesc">Centenary Bank support desk wordmark with the official icon motif.</desc>
+	<g transform="translate(4 4) scale(0.048)">
+		<defs>
+			<clipPath id="circle-clip-logo">
+				<circle cx="500" cy="500" r="500" />
+			</clipPath>
+		</defs>
+
+		<circle cx="500" cy="500" r="500" fill="#09338F" />
+
+		<g clip-path="url(#circle-clip-logo)">
+			<path d="M 420 490 L 420 425 A 15 15 0 0 1 435 410 L 565 410 A 15 15 0 0 1 580 425 L 580 490 Z" fill="#F9EB53" />
+			<path d="M 490 430 L 510 430 L 510 443 L 525 443 L 525 457 L 510 457 L 510 470 L 490 470 L 490 457 L 475 457 L 475 443 L 490 443 Z" fill="#EA2228" />
+			<rect x="419" y="490" width="162" height="15" fill="#09338F" />
+			<polygon points="420,505 455,505 280,1050 200,1050" fill="#F9EB53" />
+			<polygon points="455,505 467,505 305,1050 280,1050" fill="#EA2228" />
+			<polygon points="467,505 520,505 520,1050 305,1050" fill="#EA2228" />
+			<polygon points="520,505 580,505 800,1050 520,1050" fill="#F9EB53" />
+		</g>
+
+		<circle cx="500" cy="500" r="470" fill="none" stroke="#FFFFFF" stroke-width="60" />
 	</g>
-	<text x="52" y="19" font-family="Roboto, sans-serif" font-weight="900" font-size="13" fill="#ffffff" letter-spacing="0.8">CENTENARY</text>
-	<text x="52" y="33" font-family="Roboto, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.7)" letter-spacing="2.2">SUPPORT DESK</text>
+
+	<text x="62" y="22" font-family="Roboto, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" letter-spacing="0.8">CENTENARY</text>
+	<text x="62" y="37" font-family="Roboto, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.72)" letter-spacing="2.2">SUPPORT DESK</text>
 </svg>

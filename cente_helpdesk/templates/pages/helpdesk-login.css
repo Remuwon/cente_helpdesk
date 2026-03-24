@@ -115,7 +115,7 @@
 	right: -40px;
 	width: 320px;
 	z-index: 0;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 32,14 20,26 8,14' fill='%23F5C518'/%3E%3Cpolygon points='20,15 32,27 20,39 8,27' fill='%23C0392B' opacity='0.9'/%3E%3C/svg%3E");
+	background-image: url("/assets/cente_helpdesk/images/centenary_logo_mark.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 }
